@@ -649,17 +649,18 @@
 </head>
 <body>
     <!-- Hero Section -->
-    <section class="h-screen flex items-center" id="hero">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="w-full md:w-1/2 hero-content" data-aos="fade-right">
-                <h1 class="text-5xl font-bold mb-6">Claim Request</h1>
-                <button class="btn-neon-pink py-3 px-8 rounded-full text-lg font-semibold">Get Started!</button>
-            </div>
-            <div class="w-full md:w-1/2 mt-10 md:mt-0" data-aos="fade-left">
-                <img src="src/assets/hero.jpg" alt="Hero Image" class="w-full rounded-lg object-cover tilt hero-img">
-            </div>
-        </div>
-    </section>
+    <section id="hero" class="relative h-screen overflow-hidden">
+        <!-- Video background -->
+        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+          <source src="src/assets/video/Video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      
+        <!-- Overlay tối nhẹ -->
+<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20 z-10"></div>
+    
+      </section>
+      
 
     <!-- Introduction Section -->
     <section class="bg-gray-900 text-white" id="intro">
