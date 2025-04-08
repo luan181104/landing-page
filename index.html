@@ -247,7 +247,7 @@
         }
 
         #hero {
-            background: linear-gradient(to bottom, #344B73, #111827);
+            background: #111827; /* Màu nền tối */
           }
         
         /* Hiệu ứng cho hero image */
@@ -258,6 +258,15 @@
         
         .hero-img:hover {
             transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+        }
+
+        #hero video {
+            width: 100%; /* Tăng chiều rộng video */
+            height: auto; /* Giữ nguyên tỷ lệ video */
+            object-fit: cover; /* Đảm bảo video lấp đầy container */
+            position: relative;
+            margin: 0 auto;
+            z-index: 0;
         }
         
         /* Hiệu ứng parallax cho section background */
@@ -456,35 +465,47 @@
     }
     
     .feature-card.bg-gradient-to-b.from-blue-600.to-blue-800 {
-        background: linear-gradient(to bottom, #3b82f6, #1e40af); /* Blue gradient */
+        background: linear-gradient(to bottom, #2563eb, #1e3a8a); /* Nhạt hơn màu xanh */
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
-    /* Specific hover colors for each card */
+    
     .feature-card.bg-gradient-to-b.from-blue-600.to-blue-800:hover {
-        background: linear-gradient(to bottom, #3b82f6, #1e40af); /* Blue gradient */
+        background: linear-gradient(to bottom, #3b82f6, #2563eb); /* Sáng hơn khi hover */
+        transform: translateY(-10px) scale(1.05); /* Nâng lên và phóng to nhẹ */
+        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.5); /* Thêm bóng */
     }
-
+    
     .feature-card.bg-gradient-to-b.from-purple-600.to-purple-800 {
-        background: linear-gradient(to bottom, #a855f7, #6b21a8); /* Purple gradient */
+        background: linear-gradient(to bottom, #7c3aed, #4c1d95); /* Nhạt hơn màu tím */
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
     
     .feature-card.bg-gradient-to-b.from-purple-600.to-purple-800:hover {
-        background: linear-gradient(to bottom, #a855f7, #6b21a8); /* Purple gradient */
+        background: linear-gradient(to bottom, #a855f7, #7c3aed); /* Sáng hơn khi hover */
+        transform: translateY(-10px) scale(1.05); /* Nâng lên và phóng to nhẹ */
+        box-shadow: 0 20px 40px rgba(124, 58, 237, 0.5); /* Thêm bóng */
     }
-
-    .feature-card.bg-gradient-to-b.from-green-600.to-green-800{
-        background: linear-gradient(to bottom, #10b981, #065f46); /* Green gradient */
+    
+    .feature-card.bg-gradient-to-b.from-green-600.to-green-800 {
+        background: linear-gradient(to bottom, #059669, #065f46); /* Nhạt hơn màu xanh lá */
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
     
     .feature-card.bg-gradient-to-b.from-green-600.to-green-800:hover {
-        background: linear-gradient(to bottom, #10b981, #065f46); /* Green gradient */
+        background: linear-gradient(to bottom, #10b981, #059669); /* Sáng hơn khi hover */
+        transform: translateY(-10px) scale(1.05); /* Nâng lên và phóng to nhẹ */
+        box-shadow: 0 20px 40px rgba(16, 185, 129, 0.5); /* Thêm bóng */
     }
-
+    
     .feature-card.bg-gradient-to-b.from-pink-600.to-pink-800 {
-        background: linear-gradient(to bottom, #ec4899, #9d174d); /* Pink gradient */
+        background: linear-gradient(to bottom, #db2777, #831843); /* Nhạt hơn màu hồng */
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
     
     .feature-card.bg-gradient-to-b.from-pink-600.to-pink-800:hover {
-        background: linear-gradient(to bottom, #ec4899, #9d174d); /* Pink gradient */
+        background: linear-gradient(to bottom, #ec4899, #db2777); /* Sáng hơn khi hover */
+        transform: translateY(-10px) scale(1.05); /* Nâng lên và phóng to nhẹ */
+        box-shadow: 0 20px 40px rgba(236, 72, 153, 0.5); /* Thêm bóng */
     }
     
     .feature-card h3 {
@@ -644,26 +665,56 @@
         height: 50px;
         width: 50px;
     }
+
+    #header {
+        background: linear-gradient(to top, #344B73, #111827);        color: #ffffff; /* Màu chữ trắng */
+        padding: 1rem 0; /* Khoảng cách trên dưới */
+        font-size: 1rem; /* Kích thước chữ */
+    }
+    
+    #header .container {
+        display: flex; /* Hiển thị các phần tử theo hàng ngang */
+        justify-content: space-between; /* Trải đều các phần tử */
+        align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+        max-width: 1200px; /* Giới hạn chiều rộng */
+        margin: auto;
+        padding: 0;
+    }
+    
+    #header p {
+        margin: 0; /* Loại bỏ khoảng cách mặc định */
+        text-align: center; /* Căn giữa nội dung */
+        white-space: nowrap; /* Đảm bảo nội dung không bị xuống dòng */
+    }
       
     </style>
 </head>
 <body>
+    <section id="header">
+        <div class="container">
+            <p class="text-lg font-semibold">Admin: Nguyễn Thị Tường Duy</p>
+            <p class="text-lg font-semibold">Mentor: Đặng Duy Thiện</p>
+            <p class="text-lg font-semibold">Trainer Assistant: Lê Ngô Tấn Dũng</p>
+        </div>
+    </section>
     <!-- Hero Section -->
-    <section id="hero" class="relative h-screen overflow-hidden">
-        <!-- Video background -->
-        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-          <source src="src/assets/video/Video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      
-        <!-- Overlay tối nhẹ -->
-<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20 z-10"></div>
-    
-      </section>
+    <section class="h-screen flex items-center" id="hero">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-4/5 hero-content" data-aos="fade-right">
+                <h1 class="text-5xl font-bold mb-6 ml-6">FPT OT Request</h1>
+                <button class="btn-neon-pink py-3 px-8 rounded-full text-lg font-semibold ml-6">Get Started!</button>
+            </div>
+            <div class="w-full md:w-1/1 mt-10 md:mt-0" data-aos="fade-left">
+                <video class="w-full rounded-lg object-cover tilt hero-img" autoplay loop muted>
+                    <source src="src/assets//video/Video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
       
 
     <!-- Introduction Section -->
-    <section class="bg-gray-900 text-white" id="intro">
+    <section class="bg-gray-800 text-white" id="intro">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl font-bold neon-underline-pink">Project Introduction</h2>
@@ -674,7 +725,7 @@
                 </div>
                 <div class="w-full md:w-1/2 md:pl-10" data-aos="fade-left">
                     <p class="text-gray-400 text-lg leading-relaxed">
-                        Claim Request is a system that supports employees to submit requests for overtime (OT) pay quickly, transparently and conveniently. With the goal of optimizing the OT management process, Claim Request helps employees easily create requests after each overtime shift, while supporting the HR and accounting departments in reviewing, processing and synthesizing accurate data.
+                        FPT OT Request is a system that supports employees to submit requests for overtime (OT) pay quickly, transparently and conveniently. With the goal of optimizing the OT management process, Claim Request helps employees easily create requests after each overtime shift, while supporting the HR and accounting departments in reviewing, processing and synthesizing accurate data.
                     </p>
                 </div>
             </div>
@@ -786,13 +837,17 @@
                             <span class="bg-pink-500 text-white w-6 h-6 flex items-center justify-center rounded-full text-sm">3</span>
                             View overall statistical report
                         </li>
+                        <li class="flex items-center gap-2">
+                            <span class="bg-pink-500 text-white w-6 h-6 flex items-center justify-center rounded-full text-sm">4</span>
+                            View all claims
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-gray-900 py-20" id="tech">
+    <section class="bg-gray-800 py-20" id="tech">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl font-bold text-white mb-12 neon-underline-pink">Technology & Tools</h2>            
             <!-- Technology Grid -->
@@ -853,7 +908,6 @@
                     <button type="button" class="team-tab active px-5 py-2.5 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-l-lg hover:from-blue-600 hover:to-blue-800 transition-all" data-target="backend">Backend</button>
                     <button type="button" class="team-tab px-5 py-2.5 bg-gradient-to-r from-pink-500 to-pink-700 text-white hover:from-pink-600 hover:to-pink-800 transition-all" data-target="design">Design</button>
                     <button type="button" class="team-tab px-5 py-2.5 bg-gradient-to-r from-green-500 to-green-700 text-white rounded-r-lg hover:from-green-600 hover:to-green-800 transition-all" data-target="frontend">Frontend</button>
-                    <button type="button" class="team-tab px-5 py-2.5 bg-gradient-to-r from-purple-500 to-purple-700 text-white rounded-r-lg hover:from-purple-600 hover:to-purple-800 transition-all" data-target="admin">Admin/Mentor/Trainer Assistant</button>
                 </div>
             </div>
             
@@ -1124,55 +1178,7 @@
                         </div>
                     </div>
                 </div>
-                              <!-- Design Team -->
-                              <div id="admin-team" class="team-section hidden">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                                    <!-- Design Members -->
-                                    <div class="member-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 hover:border-purple-400 transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                                        <div class="relative mb-6 w-32 h-32 mx-auto">
-                                            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 animate-pulse opacity-70 blur-xl"></div>
-                                            <img src="src/assets/avatar/thuy-duong.jpg" alt="Thùy Dương" class="w-full h-full object-cover rounded-full border-4 border-purple-500 p-1 relative z-10">
-                                        </div>
-                                        <h3 class="text-2xl font-bold text-center text-white mb-2">Tường Duy</h3>
-                                        <p class="text-purple-400 text-center mb-4">Admin</p>
-                                        <div class="flex justify-center space-x-3">
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-github text-xl"></i></a>
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-linkedin text-xl"></i></a>
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="far fa-envelope text-xl"></i></a>
-                                        </div>
-                                    </div>
                             
-                                    <!-- Hải Nam -->
-                                    <div class="member-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 hover:border-purple-400 transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                                        <div class="relative mb-6 w-32 h-32 mx-auto">
-                                            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 animate-pulse opacity-70 blur-xl"></div>
-                                            <img src="src/assets/avatar/hai-nam.jpg" alt="Hải Nam" class="w-full h-full object-cover rounded-full border-4 border-purple-500 p-1 relative z-10">
-                                        </div>
-                                        <h3 class="text-2xl font-bold text-center text-white mb-2">Duy Thiện</h3>
-                                        <p class="text-purple-400 text-center mb-4">Mentor</p>
-                                        <div class="flex justify-center space-x-3">
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-github text-xl"></i></a>
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-linkedin text-xl"></i></a>
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="far fa-envelope text-xl"></i></a>
-                                        </div>
-                                    </div>
-                            
-                                    <!-- Phước Lộc -->
-                                    <div class="member-card bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 hover:border-purple-400 transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                                        <div class="relative mb-6 w-32 h-32 mx-auto">
-                                            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-purple-700 animate-pulse opacity-70 blur-xl"></div>
-                                            <img src="src/assets/avatar/phuoc-loc.jpg" alt="Phước Lộc" class="w-full h-full object-cover rounded-full border-4 border-purple-500 p-1 relative z-10">
-                                        </div>
-                                        <h3 class="text-2xl font-bold text-center text-white mb-2">Tấn Dũng</h3>
-                                        <p class="text-purple-400 text-center mb-4">Trainer Assistant</p>
-                                        <div class="flex justify-center space-x-3">
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-github text-xl"></i></a>
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="fab fa-linkedin text-xl"></i></a>
-                                            <a href="#" class="text-gray-400 hover:text-purple-400"><i class="far fa-envelope text-xl"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                 </div>
             </div>
         </div>
@@ -1204,7 +1210,7 @@
         </script>
     </section>
 
-    <section id="image-carousel" class="bg-gray-900 py-20 text-white">
+    <section id="image-carousel" class="bg-gray-800 py-20 text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl font-bold text-white mb-12 neon-underline-pink">Image Project</h2>
             <div class="carousel-wrapper overflow-hidden relative">
